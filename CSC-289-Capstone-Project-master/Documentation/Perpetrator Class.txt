@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CapstoneWithForms
+{
+    class Perpetrator : Person
+    {
+        //private int _perpID;  these items will be used later when we hook up with the DB
+        //private int _personID;
+        //private int _indivID;  to link to the subject/indivAtRisk of the case
+        private string _relationship;  //to describe what the relationship of the perp is to the indivAtRisk
+
+        public Perpetrator()// no arg constructor
+        { }
+        //constructor with parameters
+        //int perpID, int personID and int indivID to be added as parameters later when DB is active
+        public Perpetrator (string lastName, string firstName, string gender, string race,
+        string dob, string ssn, string streetAddress, string apartment,
+        string city, string state, int zip, string email, string homePhone, string mobilePhone, string workPhone,
+        string churchConnection, bool milDependent, string relationship) : base(lastName, firstName, gender,
+            race, dob, ssn, streetAddress, apartment, city, state, zip, email, homePhone, mobilePhone, workPhone,
+            churchConnection, milDependent)
+        {
+            _relationship = relationship;
+        }
+
+        //setters and getters
+        public string relationship
+        {
+            get { return _relationship; }
+            set { _relationship = value; }
+        }
+
+        public void setDefaults() //hard coded data for test purpose.  putting it into a separate method allows
+        {                         //us to not call/use it and we can do something else instead like let the user
+            this.firstName = "Evil";  //enter data
+            this.lastName = "Baddy";
+            this.relationship = "boy friend to mother";
+        }
+
+
+
+    }
+}

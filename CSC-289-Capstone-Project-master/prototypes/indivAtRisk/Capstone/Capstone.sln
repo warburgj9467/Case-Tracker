@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{604094EE-7DA2-4250-AA33-EC561DB4AE56}"
+	ProjectSection(SolutionItems) = preProject
+		CareGiver.cs = CareGiver.cs
+		IndivAtRisk.cs = IndivAtRisk.cs
+		Person.cs = Person.cs
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B11D3E17-637B-4A3B-B031-DA7BB17E05A0}
+	EndGlobalSection
+EndGlobal

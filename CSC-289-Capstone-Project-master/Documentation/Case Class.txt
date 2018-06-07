@@ -1,0 +1,79 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CapstoneWithForms
+{
+    class Case
+    {
+        //private int _caseID;             //when DB goes live
+        private IndivAtRisk _indiv;
+        private CareGiver _careGiver;
+        private Perpetrator _perpetrator;
+        private SocialWorker _socialWorker;
+        private CaseHistory _caseHistory;
+
+        public Case()
+        {   //no arg constructor
+        }
+        //constructor with parameters
+        public Case(  //int caseID,
+            IndivAtRisk indiv, CareGiver careGiver, Perpetrator perpetrator, SocialWorker socialWorker,
+            CaseHistory caseHistory)
+        {
+            // caseID = _caseID;
+            indiv = _indiv;
+            careGiver = _careGiver;
+            perpetrator = _perpetrator;
+            socialWorker = _socialWorker;
+            caseHistory = _caseHistory;
+        }
+
+        //setters and getters
+        //question, do the separate tabs in the case form take a user to input data directly into the component classes
+        //or do they input and update thru the Case class?  If the user does things through the component classes then
+        //do we need getters and setters in the the Case class? Only getters?  Should we attempt to make this work in
+        //our prototype? I will create a test tab form and see what I can figure out, but need help
+        //public int caseID
+        //{
+        //    get { return _caseID; }      //getter only, _caseID will be generated in the DB
+        //}
+        public IndivAtRisk indiv
+        {
+            get { return _indiv; }
+            set { _indiv = value; }
+        }
+        public CareGiver careGiver
+        {
+            get { return _careGiver; }
+            set { _careGiver = value; }
+        }
+        public Perpetrator perpetrator
+        {
+            get { return _perpetrator; }
+        public SocialWorker socialWorker
+        {
+            get { return _socialWorker; }
+            set { _socialWorker = value; }
+        }
+        public CaseHistory caseHistory
+        {
+            get { return _caseHistory; }
+            set { _caseHistory = value; }
+        }
+
+        public void setDefaults()
+        {
+            this.indiv.firstName = "Tina";
+            this.indiv.lastName = "CaseIndivLastName";
+            this.careGiver.firstName = "CaseCareGiverFirstName";
+            this.careGiver.lastName = "CaseCareGiverLastName";
+            this.perpetrator.lastName = "CasePerpLastName";
+            this.socialWorker.lastName = "CaseSocialWorkerLastName";
+            this.caseHistory.houseEnvironmentNote = "CaseCaseHistoryHouseEnvironmentNote";
+        }
+
+    }
+}

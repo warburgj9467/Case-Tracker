@@ -1,0 +1,73 @@
+using System;
+
+public class IndivAtRisk : Person
+{
+    //private int _indivID; //auto generated PK from DB table: indivAtRisk
+    private string _schoolName;
+    private string _teacherName;
+    private string _schoolTelephone;
+    private bool _abuse;
+    private bool _neglect;
+
+    public IndivAtRisk()
+    { }
+
+    //Constructor, note: indivID and personID are auto generated in the DB (no setter methods)
+    public IndivAtRisk(string lastName, string firstName, string gender, string race,
+        string dob, string ssn, string streetAddress, string apartment,
+        string city, string state, int zip, string email, string homePhone, string mobilePhone, string workPhone,
+        string churchConnection, bool milDependent, string schoolName, string teacherName,
+        string schoolTelephone, bool abuse, bool neglect) : base(lastName, firstName, gender,
+            race, dob, ssn, streetAddress, apartment, city, state, zip, email, homePhone, mobilePhone, workPhone,
+            churchConnection, milDependent)
+
+    {
+        // IndivID = _indivID; //populated from the DB
+        _schoolName = schoolName;
+        _teacherName = teacherName;
+        _schoolTelephone = schoolTelephone;
+        _abuse = abuse;
+        _neglect = neglect;
+    }
+
+
+
+
+    //setters and getters
+    //public int IndivID { get => _indivID; }//no setter
+    public string SchoolName
+    {
+        get { return _schoolName; }
+        set { _schoolName = value; }
+    }
+    public string TeacherName
+    {
+        get { return _teacherName; }
+        set { _teacherName = value; }
+    }
+    public string SchoolTelephone
+    {
+        get { return _schoolTelephone; }
+        set { _schoolTelephone = value; }
+    }
+    public bool abuse
+    {
+        get { return _abuse; }
+        set { _abuse = value; }
+    }
+    public bool Neglect
+    {
+        get { return _neglect; }
+        set { _neglect = value; }
+    }
+
+    public void setDefaults()//this method allows us to test form and to test hard code and/or user input
+    {
+        this.firstName = "Angela";
+        this.lastName = "Cellini";
+       
+    } 
+}
+
+
+   
