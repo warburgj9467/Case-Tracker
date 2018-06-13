@@ -1,0 +1,5 @@
+C:\Users\User\Documents\GitHub\G4CP\CaseTrackerProject\Capstone_CaseTracker\CTClasses\bin\Debug\CTClasses.dll
+C:\Users\User\Documents\GitHub\G4CP\CaseTrackerProject\Capstone_CaseTracker\CTClasses\bin\Debug\CTClasses.pdb
+C:\Users\User\Documents\GitHub\G4CP\CaseTrackerProject\Capstone_CaseTracker\CTClasses\obj\Debug\CTClasses.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\G4CP\CaseTrackerProject\Capstone_CaseTracker\CTClasses\obj\Debug\CTClasses.dll
+C:\Users\User\Documents\GitHub\G4CP\CaseTrackerProject\Capstone_CaseTracker\CTClasses\obj\Debug\CTClasses.pdb

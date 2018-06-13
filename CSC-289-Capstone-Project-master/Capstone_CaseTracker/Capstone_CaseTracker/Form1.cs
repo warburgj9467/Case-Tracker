@@ -54,5 +54,13 @@ namespace Capstone_CaseTracker
                 passwordTextBox.Clear();
             }            
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form temp = new RevampForms.IARRevampForm();
+            this.Hide();
+            temp.ShowDialog();
+            this.Show();
+        }
     }
 }
