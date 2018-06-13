@@ -4,17 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace CTClasses
 {
     public class SQLCommands
     {
+        System.Data.SqlClient.SqlConnection sqlConnection1;
+
+        private System.Data.SqlClient.SqlConnection InitializeConnectionString()
+        {
+            string temp = Path.GetFullPath("ClassTrackDB.mdf");
+            return new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + temp + ";Integrated Security=True");
+        }
+
         //1)This method will call up the login table and check the provided username and password. If they match, it will return true, allowing access.
         //If they do not match, false will be returned and the user will be given a chance to input their username and password again.
         public bool LogInRetrieval(string userName, string password)
         {
             CTClasses.Login login = new CTClasses.Login();
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
             using (sqlConnection1)
             {
                 string data = "Select * from LogIn Where UserName = '" + userName + "'";
@@ -50,7 +59,7 @@ namespace CTClasses
             var names = new List<string>();
             IndivAtRisk indiv = new IndivAtRisk();
 
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             using (sqlConnection1)
             {
@@ -78,7 +87,7 @@ namespace CTClasses
         {
             var indiv = new IndivAtRisk();
             
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             using (sqlConnection1)
             {
@@ -129,7 +138,7 @@ namespace CTClasses
         {
             var giver = new CareGiver();
 
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             using (sqlConnection1)
             {
@@ -174,7 +183,7 @@ namespace CTClasses
         {
             var poi = new PersonOfInterest();
 
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             using (sqlConnection1)
             {
@@ -217,7 +226,7 @@ namespace CTClasses
         //6)In the PersonsForm, this will save the Persons data for all the Individual, CareGiver, and Person of Interest tabs to the database in the PersonsForm.
         public void PersonDataSave(string lastName, string firstName, string gender, string race, string milcon, string dob, string ssn, string church, string streetAddress, string apartment, string city, string state, string zip, string email, string homephone, string workPhone, string mobilePhone, string type)
         {
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
@@ -232,7 +241,7 @@ namespace CTClasses
         //7)This will save all the Individual at Risk information to the Individual at Risk table from the mataching tab in the PersonsForm.
         public void IndivDataSave(int personId, string teacher, string school, string schoolPhone, string abuse, string neglect)
         {
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
@@ -247,7 +256,7 @@ namespace CTClasses
         //8)This will save all the Care Giver information to the Care Giver table from the matching tab in the PersonsForm.
         public void CareGiverSaveData (int personId, int indivId, string relationship)
         {
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
@@ -262,7 +271,7 @@ namespace CTClasses
         //9)This will save all the Person of Interest information to the Person of Interest table from the matching tab in the PersonsForm.
         public void PersonOfInterestSaveData(int personId, int indivId, string relationship)
         {
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
@@ -279,7 +288,7 @@ namespace CTClasses
         {
             var indiv = new IndivAtRisk();
 
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             using (sqlConnection1)
             {
@@ -303,7 +312,7 @@ namespace CTClasses
         {
             var poi = new PersonOfInterest();
 
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             using (sqlConnection1)
             {
@@ -327,7 +336,7 @@ namespace CTClasses
         {
             var care = new CareGiver();
 
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             using (sqlConnection1)
             {
@@ -349,7 +358,7 @@ namespace CTClasses
         //15)This method will allow you to update the Persons table in the database for an existing case in the case view form.
         public void UpdatePersonData(int personId, string lastName, string firstName, string dob, string ssn, string race, string gender, string milcon, string church, string streetAddress, string apartment, string city, string state, string zip, string email, string homephone, string mobilePhone)
         {
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
@@ -382,7 +391,7 @@ namespace CTClasses
         //16)This method will allow you to update the IndividualAtRisk table in the database for an existing case in the Individual tab of the case view form.
         public void UpdateIndividualData(int personId, string school, string teacher, string schoolPhone, string abuse, string neglect)
         {
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
@@ -404,7 +413,7 @@ namespace CTClasses
         //17)This method will allow you to update the Care Giver table in the database for an existing case in the Care Giver tab of the case view form.
         public void UpdateCareGiverData(int personId, string relationship)
         {
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;
@@ -422,7 +431,7 @@ namespace CTClasses
         //18)This method will allow you to update the Person of Interest table in the database for an existing case in the Person of Interest tab of the case view form.
         public void UpdatePOIData(int personId, string relationship)
         {
-            System.Data.SqlClient.SqlConnection sqlConnection1 = new System.Data.SqlClient.SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\mrcoo\\OneDrive\\Documents\\GitHub\\CSC-289-Capstone-Project\\Capstone_CaseTracker\\Capstone_CaseTracker\\ClassTrackDB.mdf;Integrated Security=True");
+            sqlConnection1 = InitializeConnectionString();
 
             System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand();
             cmd.CommandType = System.Data.CommandType.Text;

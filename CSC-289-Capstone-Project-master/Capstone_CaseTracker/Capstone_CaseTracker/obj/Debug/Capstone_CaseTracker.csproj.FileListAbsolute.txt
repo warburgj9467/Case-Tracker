@@ -1,0 +1,16 @@
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\bin\Debug\Capstone_CaseTracker.exe.config
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\bin\Debug\ClassTrackDB.mdf
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\bin\Debug\ClassTrackDB_log.ldf
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\bin\Debug\Capstone_CaseTracker.exe
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\bin\Debug\Capstone_CaseTracker.pdb
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\bin\Debug\CTClasses.dll
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\bin\Debug\CTClasses.pdb
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\obj\Debug\Capstone_CaseTracker.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\obj\Debug\Capstone_CaseTracker.CaseList.resources
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\obj\Debug\Capstone_CaseTracker.CaseView.resources
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\obj\Debug\Capstone_CaseTracker.Form1.resources
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\obj\Debug\Capstone_CaseTracker.PersonForm.resources
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\obj\Debug\Capstone_CaseTracker.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\obj\Debug\Capstone_CaseTracker.csproj.GenerateResource.Cache
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\obj\Debug\Capstone_CaseTracker.exe
+C:\Users\User\Documents\GitHub\G4CP\Case-Tracker-New\CSC-289-Capstone-Project-master\Capstone_CaseTracker\Capstone_CaseTracker\obj\Debug\Capstone_CaseTracker.pdb
